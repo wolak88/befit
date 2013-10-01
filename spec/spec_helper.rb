@@ -44,10 +44,11 @@ Spork.prefork do
     config.order = "random"
     # Include the Capybara DSL so that specs in spec/requests still work.
     config.include Capybara::DSL
+
     # Disable the old-style object.should syntax.
-    config.expect_with :rspec do |c|
-      c.syntax = :expect
-    end
+    #config.expect_with :rspec do |c|
+    #  c.syntax = :expect
+    #end
   end
 end
 
