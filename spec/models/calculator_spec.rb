@@ -1,11 +1,22 @@
 require 'spec_helper'
 
-describe 'rspec' do
-  it 'uses should syntax' do
-    1.should == 1
-  end
+describe Calculator do
+  describe '.calculate' do
+    it 'returns correct result for sample correct input' do
+      # setup
+      calculator = Calculator.new
+      a = 1
+      b = 2
 
-  it 'uses new expect syntax' do
-    expect(1).to eq(1)
+      # execute
+      result =  calculator.calculate(a, b)
+
+      # verify
+      result.should == 10
+    end
+
+    it 'raises exception for negative input' do
+      expect { Calculator.new}.to raise_exception /negative input/
+    end
   end
 end
