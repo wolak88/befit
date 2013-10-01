@@ -18,6 +18,7 @@ group :test do
   gem 'childprocess'
 end
 # Use SCSS for stylesheets
+gem 'shoulda-matchers'
 gem 'sass-rails', '~> 4.0.0'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
