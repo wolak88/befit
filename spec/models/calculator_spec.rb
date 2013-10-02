@@ -1,22 +1,23 @@
 require 'spec_helper'
 
-describe Calculator do
+describe CCalculator do
   describe '.calculate' do
     it 'returns correct result for sample correct input' do
       # setup
-      calculator = Calculator.new
-      a = 1
-      b = 2
+      calculator = CCalculator.new
+      params = {
+       male: true,
+       weight: 89,
+       height: 198,
+       age: 25,
+       activeness: 1.275
+    }
 
       # execute
-      result =  calculator.calculate(a, b)
+      result =  calculator.calculate(params)
 
       # verify
-      result.should == 10
-    end
-
-    it 'raises exception for negative input' do
-      expect { Calculator.new}.to raise_exception /negative input/
+      result.should == 2731
     end
   end
 end
