@@ -11,15 +11,15 @@ describe CCalculator do
       result =  calculator.calculate(params)
 
       # verify
-      result.should == 2731
+      result.should == 2663
     end
   end
 
   describe '.male_bee' do
     it 'returns correct value' do
-      calculator = CCalculator.new
-      bee =  calculator.send(:male_bee, 60, 198, 0)
-      bee.should == 0
+      CCalculator.new.send(:male_bee, 60, 198, 5]).should == 1813.999
+      CCalculator.new.send(:male_bee, 60, 198, 5]).should == 1813.999
+      CCalculator.new.send(:male_bee, 60, 198, 5]).should == 1813.999
     end
   end
 
@@ -28,7 +28,7 @@ describe CCalculator do
     it 'returns correct value' do
       calculator = CCalculator.new
       bee = calculator.send(:female_bee, 11.2, 12.3, 15)
-      bee.should == 0
+      bee.should == 524.3148
     end
   end
 end

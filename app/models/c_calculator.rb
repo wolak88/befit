@@ -1,16 +1,18 @@
 class CCalculator
 
   def calculate(params)
-     if params[:male]
-       bee = male_bee(params[:weight], params[:height], params[:age])
-     else
-       bee = female_bee(params[:weight], params[:height], params[:age])
-     end
-     bmr = bee * params[:activeness]
-     calories_needed = bmr.floor
+     (bee(params) * params[:activeness]).floor
   end
 
   private
+
+    def bee(params)
+     if params[:male]
+       male_bee(params[:weight], params[:height], params[:age])
+     else
+       female_bee(params[:weight], params[:height], params[:age])
+     end
+    end
 
   	def male_bee(weight, height, age)
   		88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age)
