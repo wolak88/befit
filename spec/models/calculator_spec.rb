@@ -5,13 +5,7 @@ describe CCalculator do
     it 'returns correct result for sample correct input' do
       # setup
       calculator = CCalculator.new
-      params = {
-       male: true,
-       weight: 89,
-       height: 198,
-       age: 25,
-       activeness: 1.275
-    }
+      params = { male: true, weight: 89, height: 198, age: 25, activeness: 1.275 }
 
       # execute
       result =  calculator.calculate(params)
@@ -20,15 +14,18 @@ describe CCalculator do
       result.should == 2731
     end
   end
-end
 
-
-describe 'rspec' do
-  it 'uses should syntax' do
-    1.should == 1
+  describe '.male_bee' do
+    it 'returns correct male bee value' do
+      calculator = CCalculator.new
+      bee =  calculator.send(:male_bee, 60, 198)
+    end
   end
 
-  it 'uses new expect syntax' do
-    expect(1).to eq(1)
+
+  describe '.female_bee' do
+      calculator = CCalculator.new
+      bee = calculator.send(:female_bee, 11.2, 12.3, 15)
+      bee.should == 0
   end
 end
