@@ -4,7 +4,7 @@ feature 'calories form' do
 
   context 'when a user visit calories form' do
     background do
-      visit static_pages_calories_form_path
+      visit new_avatar_path
     end
     scenario "the form has correct fields" do
       within "form" do
@@ -17,7 +17,7 @@ feature 'calories form' do
 
   context 'when a user fill calories form with all data' do
     background do
-      visit static_pages_calories_form_path
+      visit new_avatar_path
     end
     scenario "calculate calories" do
       within "form" do
@@ -35,7 +35,7 @@ feature 'calories form' do
 	# fail path
 	context 'when a user fill calories form with NOT all required data' do
     background do
-      visit static_pages_calories_form_path
+      visit new_avatar_path
     end
 		scenario "show error message" do
       within "form" do
