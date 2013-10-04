@@ -9,10 +9,10 @@ feature 'calories form' do
     scenario "the form has correct fields" do
 
       save_and_open_page
-      
+
       within "form" do
-        page.should have_field("age")
-        page.should have_field("weight")
+        page.should have_field("Age")
+        page.should have_field("Weight")
         page.should have_button("Dajesz kalorie")
       end
     end
@@ -24,9 +24,9 @@ feature 'calories form' do
     end
     scenario "calculate calories" do
       within "form" do
-        fill_in "age", with: "20"
-        fill_in "weight", with: "90"
-        fill_in "height", with: "190"
+        fill_in "Age", with: "20"
+        fill_in "Weight", with: "90"
+        fill_in "Height", with: "190"
 
         click_button "Dajesz kalorie"
       end
@@ -42,9 +42,9 @@ feature 'calories form' do
     end
 		scenario "show error message" do
       within "form" do
-        fill_in "weight", with: "" # missing weight
-        fill_in "height", with: "190"
-        fill_in "age", with: "20"
+        fill_in "Weight", with: "" # missing weight
+        fill_in "Height", with: "190"
+        fill_in "Age", with: "20"
         click_button "Dajesz kalorie"
       end
       page.should have_content("podaj wage") # a tu nie lepiej sprawdzic czy jest jakis error flash message?
