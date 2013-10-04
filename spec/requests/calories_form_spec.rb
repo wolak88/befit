@@ -7,6 +7,9 @@ feature 'calories form' do
       visit static_pages_calories_form_path
     end
     scenario "the form has correct fields" do
+
+      save_and_open_page # this should open a page in a browser
+
       within "form" do
         page.should have_field("age")
         page.should have_field("wzrost")
