@@ -9,8 +9,8 @@ feature 'calories form' do
     scenario "the form has correct fields" do
       within "form" do
         page.should have_field("age")
-        page.should have_field("wzrost")
-        page.should have_button("Wyslij")
+        page.should have_field("weight")
+        page.should have_button("Dajesz kalorie")
       end
     end
   end
