@@ -1,7 +1,7 @@
 <h1> Cześć! Wypełnij formularz: </h1>
 <div class="row">
 	<div class="span6 offset3">
-		<%= form_for(@params) do |f| %>
+		<%= form_for :calories_data do |f| %>
 		<%= f.label  :age%>
 		<%= f.number_field :age %>
 		<%= f.label  :weight%>
