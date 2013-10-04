@@ -1,0 +1,21 @@
+<h1> Cześć! Wypełnij formularz: </h1>
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@params) do |f| %>
+		<%= f.label  :age%>
+		<%= f.number_field :age %>
+		<%= f.label  :weight%>
+		<%= f.number_field :weight %>
+		<%= f.label :height %>
+        <%= f.number_field :height %>
+		<%= f.label  :male%>
+		<%= f.check_box :male %>
+		<%= f.label  :activeness%>
+		<%= f.select :activeness, [["Sedentery",1.2],["Light Active", 1.375],["Moderately Active", 1.53],["Very active", 1.725],["Extra Active", 1.9]] %>
+		<%= f.submit "Dajesz kalorie", class: "btn btn-large btn-primary" %>
+		<%end%>
+	</div>
+</div>
+      
+      
+      

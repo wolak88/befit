@@ -4,13 +4,14 @@ feature 'calories form' do
 	# happy path
 	context 'when a user fill calories form with all data' do
 	    background do
-	      visit static_pages_calories_form
+	      visit static_pages_calories_form_path
 	    end
 		scenario "calculate calories" do
 	 	    within "form" do
-		        fill_in "wieht", with: "90"
+	 	    	fill_in "age", with: "20"
+		        fill_in "weight", with: "90"
 		        fill_in "height", with: "190"
-		        fill_in "age", with: "20"
+		        
 		        click_button "Dajesz kalorie"
       	    end
             page.should display_flash_message("Obliczylismy twoje kalorie. ponizej rezultat")
@@ -21,11 +22,11 @@ feature 'calories form' do
 	# fail path
 	context 'when a user fill calories form with NOT all required data' do
 	    background do
-	      visit static_pages_calories_form
+	      visit static_pages_calories_form_path
 	    end
 		scenario "show error message" do
 	 	    within "form" do
-		        fill_in "wieht", with: "" # missing weight
+		        fill_in "weight", with: "" # missing weight
 		        fill_in "height", with: "190"
 		        fill_in "age", with: "20"
 		        click_button "Dajesz kalorie"
