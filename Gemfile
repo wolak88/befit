@@ -17,6 +17,7 @@ group :test do
   gem 'spork-rails'
   gem 'guard-spork'
   gem 'childprocess'
+  gem 'launchy'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
