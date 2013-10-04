@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  age: 1
+  male: false
+  weight: 1
+  height: 1
+  activeness: 1.5
+
+two:
+  age: 1
+  male: false
+  weight: 1
+  height: 1
+  activeness: 1.5
