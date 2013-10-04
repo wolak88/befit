@@ -4,29 +4,33 @@ feature 'calories form' do
 
   context 'when a user visit calories form' do
     background do
-      visit static_pages_calories_form_path
+
+      visit new_avatar_path
     end
     scenario "the form has correct fields" do
 
-      save_and_open_page # this should open a page in a browser
+      save_and_open_page
 
       within "form" do
-        page.should have_field("age")
-        page.should have_field("wzrost")
-        page.should have_button("Wyslij")
+        page.should have_field("Age")
+        page.should have_field("Weight")
+        page.should have_button("Dajesz kalorie")
+
       end
     end
   end
 
   context 'when a user fill calories form with all data' do
     background do
-      visit static_pages_calories_form_path
+
+      visit new_avatar_path
     end
     scenario "calculate calories" do
       within "form" do
-        fill_in "age", with: "20"
-        fill_in "weight", with: "90"
-        fill_in "height", with: "190"
+        fill_in "Age", with: "20"
+        fill_in "Weight", with: "90"
+        fill_in "Height", with: "190"
+
 
         click_button "Dajesz kalorie"
       end
@@ -38,13 +42,14 @@ feature 'calories form' do
 	# fail path
 	context 'when a user fill calories form with NOT all required data' do
     background do
-      visit static_pages_calories_form_path
+
+      visit new_avatar_path
     end
 		scenario "show error message" do
       within "form" do
-        fill_in "weight", with: "" # missing weight
-        fill_in "height", with: "190"
-        fill_in "age", with: "20"
+        fill_in "Weight", with: "" # missing weight
+        fill_in "Height", with: "190"
+        fill_in "Age", with: "20"
         click_button "Dajesz kalorie"
       end
       page.should have_content("podaj wage") # a tu nie lepiej sprawdzic czy jest jakis error flash message?
