@@ -7,6 +7,9 @@ feature 'calories form' do
       visit new_avatar_path
     end
     scenario "the form has correct fields" do
+
+      save_and_open_page
+      
       within "form" do
         page.should have_field("age")
         page.should have_field("weight")
