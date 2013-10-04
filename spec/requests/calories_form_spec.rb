@@ -1,23 +1,36 @@
 require "spec_helper"
 
 feature 'calories form' do
-	# happy path
-	context 'when a user fill calories form with all data' do
+
+  context 'when a user visit calories form' do
+    background do
+      visit static_pages_calories_form_path
+    end
+    scenario "the form has correct fields" do
+      within "form" do
+        page.should have_field("age")
+        page.should have_field("wzrost")
+        page.should have_button("Wyslij")
+      end
+    end
+  end
+
+  context 'when a user fill calories form with all data' do
     background do
       visit static_pages_calories_form_path
     end
     scenario "calculate calories" do
       within "form" do
         fill_in "age", with: "20"
-          fill_in "weight", with: "90"
-          fill_in "height", with: "190"
+        fill_in "weight", with: "90"
+        fill_in "height", with: "190"
 
-          click_button "Dajesz kalorie"
-        end
-        page.should display_flash_message("Obliczylismy twoje kalorie. ponizej rezultat")
-        page.should have_content("2134.43") # obliczony rezultat
+        click_button "Dajesz kalorie"
+      end
+      page.should display_flash_message("Obliczylismy twoje kalorie. ponizej rezultat")
+      page.should have_content("2134.43") # obliczony rezultat
     end
-	end
+  end
 
 	# fail path
 	context 'when a user fill calories form with NOT all required data' do
