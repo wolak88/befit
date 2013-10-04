@@ -17,18 +17,16 @@ describe CCalculator do
 
   describe '.male_bee' do
     it 'returns correct value' do
-      CCalculator.new.send(:male_bee, 60, 198, 5]).should == 1813.999
-      CCalculator.new.send(:male_bee, 60, 198, 5]).should == 1813.999
-      CCalculator.new.send(:male_bee, 60, 198, 5]).should == 1813.999
+      CCalculator.new.send(:male_bee, 60, 198, 5).should == 1813.999
+      CCalculator.new.send(:male_bee, 60, 198, 5).should == 1813.999
+      CCalculator.new.send(:male_bee, 60, 198, 5).should == 1813.999
     end
   end
 
 
   describe '.female_bee' do
     it 'returns correct value' do
-      calculator = CCalculator.new
-      bee = calculator.send(:female_bee, 11.2, 12.3, 15)
-      bee.should == 524.3148
+      CCalculator.new.send(:female_bee, 65, 190, 24).should == 1533.348
     end
   end
 end
