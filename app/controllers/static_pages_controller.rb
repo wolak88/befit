@@ -7,4 +7,9 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def calories_form
+  	@params
+  end
+
 end
