@@ -15,7 +15,8 @@ class AvatarsController < ApplicationController
   end
 
   private
-  def avatar_params
-  	params.require(:avatar).permit(:age, :height, :weight, :male, :activeness)
-  end
+
+    def avatar_params
+  	  params.require(:avatar).permit(:age, :height, :weight, :male, :activeness)
+    end
 end
