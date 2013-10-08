@@ -8,7 +8,7 @@ class AvatarsController < ApplicationController
   	@avatar = Avatar.new(avatar_params)
   	if @avatar.save
   		flash[:success] = "Stworzyłeś avatara!"
-  		redirect_to #
+  		redirect_to avatar_path
   	else
   		render 'new'
   	end
