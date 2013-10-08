@@ -1,28 +1,21 @@
 require "spec_helper"
 
 feature 'calories form' do
-
   context 'when a user visit calories form' do
     background do
-
       visit new_avatar_path
     end
     scenario "the form has correct fields" do
-
-      #save_and_open_page
-
       within "form" do
         page.should have_field("Age")
         page.should have_field("Weight")
         page.should have_button("Dajesz kalorie")
-
       end
     end
   end
 
   context 'when a user fill calories form with all data' do
     background do
-
       visit new_avatar_path
     end
     scenario "calculate calories" do
@@ -30,8 +23,6 @@ feature 'calories form' do
         fill_in "Age", with: "20"
         fill_in "Weight", with: "90"
         fill_in "Height", with: "190"
-
-
         click_button "Dajesz kalorie"
       end
       page.should display_flash_message("Obliczylismy twoje kalorie. ponizej rezultat")
@@ -42,7 +33,6 @@ feature 'calories form' do
 	# fail path
 	context 'when a user fill calories form with NOT all required data' do
     background do
-
       visit new_avatar_path
     end
 		scenario "show error message" do
