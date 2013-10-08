@@ -39,3 +39,10 @@ feature 'avatar form' do
     page.should have_content("Weight must be less than 160")
   end
 end
+
+feature 'Avatar show' do
+  visit show_avatar_path
+  page.should have_content("Pokazuje avatara")
+
+
+end
