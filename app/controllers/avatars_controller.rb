@@ -5,7 +5,7 @@ class AvatarsController < ApplicationController
   end
 
   def create
-  	@avatar = Avatar.new(params)
+  	@avatar = Avatar.new(avatar_params)
   	if @avatar.save
   		flash[:success] = "Stworzyłeś avatara!"
   		redirect_to #
@@ -14,4 +14,8 @@ class AvatarsController < ApplicationController
   	end
   end
 
+  private
+  def avatar_params
+  	params.require(:avatar).permit(:age, :height, :weight, :male, :activeness)
+  end
 end
