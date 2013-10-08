@@ -9,7 +9,7 @@ feature 'calories form' do
     end
     scenario "the form has correct fields" do
 
-      save_and_open_page
+      #save_and_open_page
 
       within "form" do
         page.should have_field("Age")
