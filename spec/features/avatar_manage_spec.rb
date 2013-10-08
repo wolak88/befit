@@ -41,8 +41,9 @@ feature 'avatar form' do
 end
 
 feature 'Avatar show' do
-  visit show_avatar_path
+  let (:avatar) do
+    Avatar.new
+  end
+  visit avatar_path(:avatar)
   page.should have_content("Pokazuje avatara")
-
-
 end
