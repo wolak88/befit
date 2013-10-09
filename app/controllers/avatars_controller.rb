@@ -17,9 +17,9 @@ class AvatarsController < ApplicationController
   def show
     @avatar = Avatar.find_by_id(params[:id])
     if @avatar.nil?
-      render no_avatar
+      render 'no_avatar'
     else
-      render show
+      render 'show'
     end
   end
 
