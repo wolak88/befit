@@ -42,9 +42,10 @@ end
 
 feature 'Avatar show' do
   background do
-    @avatar = Avatar.new
+    @avatar = Avatar.new(weight: 90, height:198, male: true, activeness: 1.2, age: 26)
     visit avatar_path @avatar
-   
   end
-  #response.should have_content("Pokazuje avatara")
+  scenario 'page should show the avatar' do
+    page.should have_content("Pokazuje avatara")
+  end
 end
