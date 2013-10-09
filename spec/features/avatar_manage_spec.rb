@@ -61,7 +61,8 @@ feature 'Avatar show' do
   let!(:avatar) { FactoryGirl.create(:avatar) }
 
   background do
-    visit avatar_path :avatar
+    # visit avatar_path(avatar.id)
+    visit "http://localhost:3000/avatars/#{avatar.id}"
   end
 
   scenario 'page should show the avatar' do
