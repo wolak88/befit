@@ -41,6 +41,10 @@ feature 'avatar form' do
 end
 
 feature 'Avatar show' do
-  visit avatar_path 2
-  page.should have_content("Pokazuje avatara")
+  background do
+    @avatar = Avatar.new
+    visit avatar_path @avatar
+   
+  end
+  #response.should have_content("Pokazuje avatara")
 end
