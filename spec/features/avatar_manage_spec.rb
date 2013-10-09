@@ -58,6 +58,10 @@ feature 'Avatar show' do
     scenario 'page should show the avatar' do
       page.should have_content("Pokazuje avatara")
     end
+
+    scenario 'page should consist calculated calories' do
+      page.should have_content("Dzienna dawka kalorii: 2663")
+    end
   end
 
   context 'when avatar doesnt exists' do
