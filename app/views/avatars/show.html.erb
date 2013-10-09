@@ -1,1 +1,5 @@
-Pokazuje Avatara
+<% provide :title, 'Twój avatar'%>
+<h1>Pokazuje Avatara</h1>
+<% for attribute in @avatar.attributes.keys %>
+  <p><%= attribute.humanize %> <%= @avatar.attributes[attribute].to_s %></p>
+<% end %>
