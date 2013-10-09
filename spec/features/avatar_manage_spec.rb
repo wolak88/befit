@@ -60,7 +60,7 @@ feature 'Avatar show' do
     end
 
     scenario 'page should consist calculated calories' do
-      page.should have_content("Dzienna dawka kalorii: 2663")
+      page.should have_content("Dzienna dawka kalorii: 2683")
     end
   end
 
