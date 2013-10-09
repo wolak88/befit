@@ -16,7 +16,11 @@ class AvatarsController < ApplicationController
 
   def show
     @avatar = Avatar.find_by_id(params[:id])
-    render no_avatar if @avatar.nil?
+    if @avatar.nil?
+      render no_avatar
+    else
+      render show
+    end
   end
 
   private
