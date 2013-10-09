@@ -15,6 +15,7 @@ class AvatarsController < ApplicationController
   end
 
   def show
+    @avatar = Avatar.find(params[:id])
   end
 
   private
