@@ -47,15 +47,28 @@ feature 'avatar form' do
 end
 
 feature 'Avatar show' do
-  let!(:avatar) { FactoryGirl.create(:avatar) }
+  context 'when avatar exists' do
+    let!(:avatar) { FactoryGirl.create(:avatar) }
 
-  background do
+    background do
     visit avatar_path(avatar.id)
     #visit "http://localhost:3000/avatars/#{avatar.id}"
+    end
+
+    scenario 'page should show the avatar' do
+      page.should have_content("Pokazuje avatara")
+    end
   end
 
-  scenario 'page should show the avatar' do
-    page.should have_content("Pokazuje avatara")
+  context 'when avatar doesnt exists' do
+    background do
+    visit avatar_path(-1)
+    end
+
+    scenario 'u should get nice message that it doesnt exists' do
+      page.should have_content("Niestety ten avatar nie istnieje")
+    end
   end
+
 end
 
