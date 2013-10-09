@@ -41,9 +41,10 @@ feature 'avatar form' do
 end
 
 feature 'Avatar show' do
+  let!(:avatar) { FactoryGirl.create(:avatar) }
   background do
-    @avatar = Avatar.new(weight: 90, height:198, male: true, activeness: 1.2, age: 26)
-    visit avatar_path @avatar
+    
+    visit avatar_path :avatar
   end
   scenario 'page should show the avatar' do
     page.should have_content("Pokazuje avatara")
