@@ -5,7 +5,6 @@ factory :avatar do
     weight 100
     male true
     activeness 1.2
-    user
   end
 
 end
