@@ -43,15 +43,15 @@ feature 'avatar form' do
 
     page.should have_content("Weight must be less than 160")
   end
-  
+
 end
 
 feature 'Avatar show' do
   let!(:avatar) { FactoryGirl.create(:avatar) }
 
   background do
-    # visit avatar_path(avatar.id)
-    visit "http://localhost:3000/avatars/#{avatar.id}"
+    visit avatar_path(avatar.id)
+    #visit "http://localhost:3000/avatars/#{avatar.id}"
   end
 
   scenario 'page should show the avatar' do
