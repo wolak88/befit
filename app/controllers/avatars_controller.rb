@@ -19,7 +19,7 @@ class AvatarsController < ApplicationController
     if @avatar.nil?
       render 'no_avatar'
     else
-      @calories_needed = CCalculator.new().calculate(@avatar)
+      @calculated_daily_needs = CCalculator.new().calculate(@avatar)
       render 'show'
     end
   end
