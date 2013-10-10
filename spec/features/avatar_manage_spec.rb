@@ -62,6 +62,13 @@ feature 'Avatar show' do
     scenario 'page should consist calculated calories' do
       page.should have_content("Dzienna dawka kalorii: 2683")
     end
+
+    scenario 'page should consist fat, carbohydrates, proteins, alcohol needed'
+      page.should have_content("Tłuszcze:")
+      page.should have_content("Węgle:")
+      page.should have_content("Białka:")
+      page.should have_content("Alkohol:")
+    end
   end
 
   context 'when avatar doesnt exists' do
