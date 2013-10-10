@@ -3,4 +3,7 @@
 <% for attribute in @avatar.attributes.keys %>
   <p><%= attribute.humanize %> <%= @avatar.attributes[attribute].to_s %></p>
 <% end %>
-<p>Dzienna dawka kalorii: <%= @calories_needed %> </p>
+<h2>Dzienne dawki:</h2>
+<% @calculated_daily_needs.each_pair do |key, value| %>
+    <p> Key: <%= key %> Value: <%= value %> </p>
+<% end %>
