@@ -5,5 +5,5 @@
 <% end %>
 <h2>Dzienne dawki:</h2>
 <% @calculated_daily_needs.each_pair do |key, value| %>
-    <p> Key: <%= key %> Value: <%= value %> </p>
+    <p> <%= t("model.calculator.#{key}") %> : <%= value %> </p>
 <% end %>
