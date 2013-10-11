@@ -1,0 +1,15 @@
+pl:
+ model:
+   avatar:
+     attributes:
+       weight: "waga"
+       age: "wiek"
+       height: "wzrost"
+       male: "mężczyzna"
+       activeness: "aktywność"
+   calculator:
+     calories_needed: "Zapotrzebowanie na kalorie"
+     fat_needed: "Zapotrzebowanie na tłuszcz"
+     proteins_needed: "Zapotrzebowanie na białka"
+     carbohydrates_needed: "Zapotrzebowanie na węglowodany"
+     alcohol_needed: "Zapotrzebowanie na alkohol"
