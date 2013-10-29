@@ -15,7 +15,7 @@ feature 'avatar form' do
       click_button "Dajesz kalorie"
     end
 
-    page.should have_content("Age must be less than 100")
+    page.should have_content("musi być mniejszy niż")
   end
 
   scenario 'when user fills height not from range 130-230' do
