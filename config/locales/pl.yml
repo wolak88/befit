@@ -13,3 +13,10 @@ pl:
      proteins_needed: "Zapotrzebowanie na białka"
      carbohydrates_needed: "Zapotrzebowanie na węglowodany"
      alcohol_needed: "Zapotrzebowanie na alkohol"
+ activerecord:
+   errors:
+     models:
+       avatar:
+         attributes:
+           age:
+             less_than: "musi być mniejszy niż"
