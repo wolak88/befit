@@ -1,0 +1,9 @@
+<% provide :title, 'Twój avatar'%>
+<h1>Pokazuje avatara</h1>
+<% for attribute in @avatar.attributes.keys %>
+  <p><%= attribute.humanize %> <%= @avatar.attributes[attribute].to_s %></p>
+<% end %>
+<h2>Dzienne dawki:</h2>
+<% @calculated_daily_needs.each_pair do |key, value| %>
+    <p> <%= t("model.calculator.#{key}") %> : <%= value %> </p>
+<% end %>
