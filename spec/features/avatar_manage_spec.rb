@@ -60,14 +60,14 @@ feature 'Avatar show' do
     end
 
     scenario 'page should consist calculated calories' do
-      page.should have_content("Dzienna dawka kalorii: 2683")
+      page.should have_content("2663")
     end
 
     scenario 'page should consist fat, carbohydrates, proteins, alcohol needed' do
-      page.should have_content("Tłuszcz")
-      page.should have_content("Węgle:")
-      page.should have_content("Białka:")
-      page.should have_content("Alkohol:")
+      page.should have_content("tłuszcz : 73")
+      page.should have_content("węglowodany : 166")
+      page.should have_content("białka : 166")
+      page.should have_content("alkohol : 95")
     end
   end
 
